@@ -47,6 +47,14 @@ In reviewing this project, much focus is on the professional quality and speed o
 judgment used when working with AI, and engineering as a team. These are all
 vital traits for a professional software engineer.
 
+### 1.5 Make this your own!!
+
+This project is your canvas. The core requirements in the use cases set the baseline, but this is where
+you can go above and beyond to stand out. Take this project in whatever direction proves your
+unique value; whether that's through sophisticated prompt engineering, an elegant UI, a
+particularly clever architectural choice, or engineering practices that show you can operate
+on a production team.
+
 ### How To Use This Document
 
 1. `README.md` defines the overall product.
