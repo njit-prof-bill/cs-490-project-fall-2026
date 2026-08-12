@@ -330,12 +330,6 @@ Ownership is transitive: reviews and ingestion data are accessible only through 
 
 ## 8. Sprint Themes and Delivery Order
 
-Story source files:
-
-1. Sprint 1 stories: `Sprint1Stories.md`
-2. Sprint 2 stories: `Sprint2Stories.md`
-3. Sprint 3 stories: `Sprint3Stories.md`
-
 Themes:
 
 1. **Sprint 1: Authentication, Analysis Targets, and Ingestion Baseline**
@@ -355,8 +349,6 @@ Themes:
    - post-deployment verification
    - security and reliability hardening
    - end-to-end smoke coverage
-
-For the first two weeks, students should use `README.md` together with `Sprint1Stories.md` as the authoritative reference set.
 
 ## 9. Student Execution Guidance
 
