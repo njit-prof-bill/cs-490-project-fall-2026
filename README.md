@@ -6,9 +6,14 @@ _CS 490 Capstone Project_
 
 ### 1.1 Product Purpose
 
-ReviewLens AI is a review intelligence application for analyzing customer feedback from a public review platform.
+Imagine a consultancy that specializes in Online Reputation Management (ORM). Their
+business model relies on analyzing massive amounts of fragmented customer feedback to
+offer strategic services to brands.
 
-The purpose is to help a user ingest a product or entity's customer reviews, understand what data was collected, and ask focused questions about that review data without the AI drifting into unrelated sources or general knowledge.
+Without ReviewLens, they spend hours manually reading reviews to identify "pain points." They
+need a rapid prototype of a Review Intelligence Portal that can ingest a product's digital
+footprint and allow an analyst to "talk" to that data to find specific trends—without the AI
+drifting into generalities or competitor data.
 
 ### 1.2 Product Vision
 
@@ -32,6 +37,15 @@ Each team must support **one** public review platform such as Amazon, Google Map
 2. Contains user-generated written reviews and ratings.
 
 The application does not need to support multiple review platforms.
+
+### 1.4 Using Modern Development Tools
+
+Your goal is to build great software as a team. Development may include your use of AI tools (Claude Code,
+Cursor, Codex, Copilot, etc.), which is expected.
+
+In reviewing this project, much focus is on the professional quality and speed of delivery, the
+judgment used when working with AI, and engineering as a team. These are all
+vital traits for a professional software engineer.
 
 ### How To Use This Document
 
