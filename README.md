@@ -381,3 +381,5 @@ A team is done when:
 11. The complete source code is maintained in the team's GitHub repository.
 12. Required project documentation and AI development transcripts are present and reviewable.
 13. The deployed application is stable enough for an end-to-end class demonstration.
+
+update September 29, 2026
