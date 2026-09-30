@@ -382,4 +382,4 @@ A team is done when:
 12. Required project documentation and AI development transcripts are present and reviewable.
 13. The deployed application is stable enough for an end-to-end class demonstration.
 
-updated September 29, 2026
+Updated September 29, 2026
