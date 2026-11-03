@@ -72,11 +72,7 @@ The document should address:
 
 AI-generated code is treated as team-authored code and is subject to the same Definition of Done.
 
-**Rules:** S1-BR-004, S1-BR-008, S1-BR-011
-
----
-
-# B. Project and Delivery Baseline",sprint-1,Sprint 1
+**Rules:** S1-BR-004, S1-BR-008, S1-BR-011",sprint-1,Sprint 1
 S1-005,S1-005 - Establish Project Structure and Local Development Workflow,"**Outcome:**
 The repository has a stable application structure and documented commands that allow another team member to install dependencies and run the Sprint 1 application locally.
 
@@ -131,11 +127,7 @@ Developers can configure local application dependencies without committing secre
 4. Database and third-party ingestion credentials must be server-side where required.
 5. Missing required configuration should result in an understandable startup or runtime failure.
 
-**Rules:** S1-BR-011
-
----
-
-# C. Managed Authentication and User Ownership",sprint-1,Sprint 1
+**Rules:** S1-BR-011",sprint-1,Sprint 1
 S1-009,S1-009 - Integrate Managed Authentication,"**Outcome:**
 A user can authenticate with the team's selected managed identity provider and establish an authenticated ReviewLens session.
 
@@ -229,11 +221,7 @@ At minimum, automated tests should demonstrate that User B cannot:
 
 The backend should validate ownership of the parent AnalysisTarget before performing child-resource operations.
 
-**Rules:** S1-BR-007 through S1-BR-010, S1-BR-018
-
----
-
-# D. Analysis Target Baseline",sprint-1,Sprint 1
+**Rules:** S1-BR-007 through S1-BR-010, S1-BR-018",sprint-1,Sprint 1
 S1-014,S1-014 - Implement AnalysisTarget Persistence Model,"**Outcome:**
 The application can persist and retrieve an AnalysisTarget with its required Sprint 1 fields and authenticated owner relationship.
 
@@ -336,11 +324,7 @@ The workspace establishes the context that later sprints will extend with ingest
 
 Direct navigation to a target identifier belonging to another user must be denied by the authorization behavior defined elsewhere in this sprint.
 
-**Rules:** S1-BR-016 through S1-BR-018
-
----
-
-# E. Review Ingestion Baseline",sprint-1,Sprint 1
+**Rules:** S1-BR-016 through S1-BR-018",sprint-1,Sprint 1
 S1-019,S1-019 - Submit Review Source for Ingestion,"**Outcome:**
 An authenticated user can initiate review ingestion for an AnalysisTarget they own using the source mechanism supported by the team.
 
