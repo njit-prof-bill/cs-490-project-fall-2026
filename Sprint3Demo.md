@@ -16,8 +16,8 @@ The demo should emphasize:
 4. Evidence-backed analysis.
 5. Review browsing and filtering.
 6. CSV and Markdown export.
-7. Continued user isolation.
-8. Public deployment.
+7. Public deployment.
+8. The team's approved student-designed product feature.
 
 The application itself must be demonstrated from its **public web URL**.
 
@@ -33,7 +33,7 @@ The clock includes authentication, navigation, instructor questions, waiting for
 
 Any required behavior not demonstrated before time expires is considered not demonstrated.
 
-Teams should target approximately **16-17 minutes of planned demonstration**, leaving room for instructor questions.
+Teams should target approximately **17-18 minutes of planned demonstration**, leaving limited room for instructor questions.
 
 ## 3. Required Demo Preparation
 
@@ -68,15 +68,6 @@ User A should have:
 5. A dataset suitable for evidence-backed Q&A.
 6. One analysis safe to rename or copy.
 7. One disposable analysis safe to delete.
-
-#### User B - Isolation Account
-
-User B should have:
-
-1. At least one saved analysis.
-2. A distinct persisted review dataset.
-
-Prepare one known User A analysis URL or identifier for the user-isolation demonstration.
 
 ### 3.3 Required Review Data
 
@@ -147,17 +138,39 @@ The team should know:
 6. Which filters will be applied.
 7. Which exports will be generated.
 8. Which disposable analysis will be deleted.
-9. Which User A resource will be used for the User B isolation check.
-10. Which tests and CI run will be shown.
+9. Which tests and CI run will be shown.
 
 Avoidable preparation problems are not reasons to extend the demo.
+
+### 3.9 Student-Designed Product Feature Preparation
+
+Prepare the team's approved student-designed product feature for the final portion of the demo.
+
+The team should have available:
+
+1. The approved feature proposal from the team's Discord channel.
+2. The team-authored Sprint 3 backlog stories for the feature in GitHub Projects.
+3. A working end-to-end implementation of the approved feature.
+4. Representative automated tests, including at least one non-happy-path case.
+5. Any persisted data or setup required to demonstrate the feature efficiently.
+
+The team should be prepared to explain:
+
+1. The user problem the feature solves.
+2. Why the feature was designed the way it was.
+3. How the work was decomposed into backlog stories.
+4. The frontend/UX changes required.
+5. The backend or business-logic changes required.
+6. The persistence or data-model changes required.
+7. Authentication, ownership, or security implications.
+8. Important implementation tradeoffs.
 
 ## 4. Before the Clock Starts
 
 Before the team is called:
 
 1. Confirm that the public URL works.
-2. Confirm that User A and User B can authenticate.
+2. Confirm that User A can authenticate.
 3. Confirm that prepared saved analyses exist.
 4. Confirm that Q&A history exists.
 5. Confirm that review evidence is available.
@@ -165,7 +178,9 @@ Before the team is called:
 7. Confirm that exports work.
 8. Confirm that required tests pass.
 9. Confirm that CI evidence is available.
-10. Open any repository/test/CI pages that will be needed.
+10. Confirm that the approved student-designed feature is ready to demonstrate.
+11. Open the approved Discord proposal, GitHub Project stories, and any repository/test/CI evidence needed for the custom feature.
+12. Open any other repository/test/CI pages that will be needed.
 
 Start with the public ReviewLens application.
 
@@ -191,7 +206,7 @@ Show that the analysis restores:
 
 ### Step 2 - Demonstrate Rename and Save As
 
-**Target time: approximately 2 minutes**
+**Target time: approximately 1-2 minutes**
 
 Rename one owned analysis.
 
@@ -223,7 +238,7 @@ Return to the primary analysis.
 
 ### Step 4 - Demonstrate Evidence-Backed Q&A
 
-**Target time: approximately 2-3 minutes**
+**Target time: approximately 2 minutes**
 
 Ask a prepared in-scope question.
 
@@ -241,7 +256,7 @@ Do not present a numerical confidence score unless the team has a defensible met
 
 ### Step 5 - Browse and Filter the Review Dataset
 
-**Target time: approximately 2 minutes**
+**Target time: approximately 1-2 minutes**
 
 Open the complete review dataset for the active analysis.
 
@@ -261,7 +276,7 @@ Show that the results change appropriately and remain scoped to the active analy
 
 ### Step 6 - Refresh / Re-Ingest the Existing Analysis
 
-**Target time: approximately 2-3 minutes**
+**Target time: approximately 2 minutes**
 
 Open the prepared existing analysis and initiate a refresh/re-ingestion.
 
@@ -281,7 +296,7 @@ Be prepared to show automated test evidence proving:
 
 ### Step 7 - Export the Analysis
 
-**Target time: approximately 2 minutes**
+**Target time: approximately 1-2 minutes**
 
 From the active analysis:
 
@@ -311,25 +326,37 @@ Show:
 
 Do not delete the primary demonstration dataset.
 
-### Step 9 - Confirm Multi-User Isolation on the Public Application
+### Step 9 - Demonstrate the Student-Designed Product Feature
 
-**Target time: approximately 1 minute**
+**Target time: approximately 2-3 minutes**
 
-Identify a known User A analysis URL or identifier.
+Finish the application portion of the Sprint 3 demo with the team's approved student-designed product feature.
 
-Log out and authenticate as **User B**.
+Briefly identify the user problem being solved, then demonstrate the feature as part of the ReviewLens product.
 
-Deliberately attempt to access the User A analysis.
+The demonstration should show the complete user-facing workflow rather than only isolated technical components.
 
-Show that access is denied.
+Show enough behavior to demonstrate that the feature includes meaningful work across the required application layers:
 
-The fact that User A's analysis is absent from User B's sidebar is not, by itself, sufficient evidence.
+1. User experience/frontend behavior.
+2. Backend/API or service behavior.
+3. Persisted application state or meaningful data relationships.
+4. Authentication, ownership, or security behavior where applicable.
+
+Be prepared to explain:
+
+1. How the implemented feature corresponds to the approved Discord proposal.
+2. Why the team chose its story decomposition.
+3. Important architecture or data-model decisions.
+4. One significant engineering tradeoff or challenge encountered during implementation.
+
+The feature should appear to be part of ReviewLens rather than a disconnected demonstration page or prototype.
 
 ### Step 10 - Show Representative Tests and CI
 
-**Target time: approximately 2 minutes**
+**Target time: approximately 1-2 minutes**
 
-Show a small number of representative Sprint 3 tests.
+After completing the application demonstration, show a small number of representative Sprint 3 tests.
 
 Include evidence for:
 
@@ -337,6 +364,9 @@ Include evidence for:
 2. Re-ingestion duplicate prevention or failed-refresh preservation.
 3. Supporting-evidence association/ownership.
 4. Export behavior.
+5. The student-designed product feature, including at least one non-happy-path case.
+
+Briefly show the team-authored GitHub Project stories used to decompose and manage the student-designed feature.
 
 Then show a recent successful CI run demonstrating that the established required quality gates still pass.
 
@@ -366,10 +396,11 @@ Questions may address:
 7. Evidence selection.
 8. Review filtering.
 9. Export generation.
-10. Ownership and authorization.
-11. Public deployment.
-12. Architecture and implementation tradeoffs.
-13. Code written or modified by a specific team member.
+10. Public deployment.
+11. Architecture and implementation tradeoffs.
+12. Student-designed feature requirements and story decomposition.
+13. Student-designed feature UX, backend, persistence, and security design.
+14. Code written or modified by a specific team member.
 
 The team member responsible for the relevant area should normally answer.
 
@@ -381,7 +412,6 @@ Before demo day, confirm all of the following:
 
 - [ ] Public ReviewLens URL works.
 - [ ] User A account works.
-- [ ] User B account works.
 - [ ] User A has at least two saved analyses.
 - [ ] At least one analysis was created in an earlier session.
 - [ ] Persisted Q&A history is available.
@@ -397,8 +427,11 @@ Before demo day, confirm all of the following:
 - [ ] CSV export works.
 - [ ] Markdown export works.
 - [ ] Exported filenames are meaningful.
-- [ ] A known User A resource is prepared for the User B isolation check.
 - [ ] Representative Sprint 3 tests are identified.
+- [ ] Approved student-designed feature proposal is available in the team Discord channel.
+- [ ] Team-authored GitHub Project stories for the student-designed feature are complete and easy to show.
+- [ ] Student-designed feature works end to end.
+- [ ] Representative tests for the student-designed feature are identified.
 - [ ] Latest successful CI run is easy to access.
 - [ ] Demo browser tabs/tools are prepared.
 - [ ] Team members know who will explain each area.

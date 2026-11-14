@@ -10,9 +10,11 @@ Story writing format for Jira:
 - Technical Guidance — implementation boundaries and expectations
 - Rules — applicable canonical business rules
 
-Sprint 3 focus: saved-analysis lifecycle, persistent Q&A history, review refresh, evidence exploration, export, and public delivery.
+Sprint 3 focus: saved-analysis lifecycle, persistent Q&A history, review refresh, evidence exploration, export, a student-designed product extension, and public delivery.
 
-Total stories: 20.
+Instructor-defined stories: 20.
+
+Each team must also define and add the backlog stories required to implement its approved student-designed product feature.
 
 Sprint 1 and Sprint 2 requirements remain in force unless explicitly changed here.
 
@@ -24,6 +26,7 @@ Sprint 1 and Sprint 2 requirements remain in force unless explicitly changed her
 4. Technical specifications define project-level engineering guardrails.
 5. Teams should make reasonable engineering decisions where implementation details are unspecified.
 6. The objective of Sprint 3 is to complete ReviewLens as a useful product, not to build unnecessary production infrastructure.
+7. In addition to the 20 instructor-defined stories, each team must design one substantial ReviewLens product feature, obtain instructor approval, decompose the approved feature into backlog stories, and implement those stories during Sprint 3.
 
 ## Sprint 3 Demonstration Goal
 
@@ -41,7 +44,8 @@ The final ReviewLens application should demonstrate this complete workflow:
 10. The user can export the analysis to Markdown.
 11. The user can delete an analysis they own.
 12. A second authenticated user remains isolated from the first user's data.
-13. The complete workflow operates from the publicly deployed application.
+13. The team demonstrates its approved student-designed product feature as an integrated part of ReviewLens.
+14. The complete workflow operates from the publicly deployed application.
 
 The demo should present these capabilities as one coherent product experience rather than as a sequence of Jira stories.
 
@@ -65,7 +69,7 @@ Every pull request must continue to run the team's established required checks, 
 
 ## Sprint 3 Test Baseline
 
-1. Every Sprint 3 feature story must include appropriate automated test updates.
+1. Every Sprint 3 feature story, including team-authored stories for the student-designed product feature, must include appropriate automated test updates.
 2. Sprint 1 and Sprint 2 regression tests must continue to pass.
 3. Saved-analysis lifecycle tests must verify user ownership.
 4. Q&A-history tests must verify correct AnalysisTarget association.
@@ -612,12 +616,147 @@ Teams are not required to add:
 
 ---
 
+# G. Student-Designed Product Extension
+
+In addition to the 20 instructor-defined Sprint 3 stories, each team must design and implement one substantial new ReviewLens product feature.
+
+This requirement is intentionally not decomposed into instructor-authored stories. Part of the Sprint 3 assignment is for the team to define the feature, obtain approval, and turn the approved feature into appropriate backlog stories.
+
+## Product Feature Requirement
+
+The feature must solve a plausible ReviewLens user problem that is not already satisfied by the required Sprint 3 stories.
+
+An acceptable feature must:
+
+1. Add a meaningful user-facing workflow or capability.
+2. Require new backend behavior or business logic.
+3. Introduce new persisted application state or a meaningful new relationship among persisted data.
+4. Preserve ReviewLens authentication, ownership, and user-isolation requirements.
+5. Include meaningful automated tests, including at least one non-happy-path behavior.
+6. Integrate naturally into the existing ReviewLens product rather than appearing as a disconnected demonstration page.
+7. Require coordinated changes across multiple application layers.
+
+The expected implementation should normally affect:
+
+1. User experience and frontend behavior.
+2. Backend/API or service behavior.
+3. Persistence or data relationships.
+4. Automated tests.
+
+The purpose of this requirement is to give each team responsibility for making a small but meaningful product decision and carrying that decision through requirements, design, implementation, persistence, security, testing, and demonstration.
+
+## Feature Proposal and Instructor Approval
+
+Before implementation begins, the team must post a short feature proposal in its **team Discord channel**.
+
+The proposal must describe:
+
+1. The user problem the feature will solve.
+2. The intended user workflow.
+3. The expected UX changes.
+4. The backend/API or service behavior required.
+5. The new persisted state or data relationships required.
+6. Authentication, ownership, or security implications.
+7. The major automated tests the team expects to need.
+
+The feature must receive **instructor approval in the team Discord channel before implementation begins**.
+
+The instructor may approve the proposal as written, request changes, or reject a proposal that is too small, too large, insufficiently integrated, or otherwise inappropriate for the sprint.
+
+If the team later changes the feature materially from the approved proposal, the revised scope should be posted in the team Discord channel for approval before the team continues with the changed design.
+
+## Team-Authored Backlog Stories
+
+After the feature is approved, the team must decompose it into appropriate Sprint 3 backlog stories and add those stories to the team's GitHub Project.
+
+A single catch-all story such as `Implement custom feature` is not sufficient.
+
+The team-authored stories should:
+
+1. Describe observable outcomes rather than vague implementation tasks.
+2. Divide the feature into sensible units of work.
+3. Make dependencies or sequencing clear where they matter.
+4. Include testable acceptance criteria or equivalent completion expectations.
+5. Identify important technical, persistence, ownership, or security constraints.
+6. Be detailed enough that another team member can understand what must be delivered.
+
+Teams should use the same general level of specificity as the instructor-defined Sprint 3 stories.
+
+The number of stories is not prescribed. The decomposition should reflect the actual scope and architecture of the approved feature rather than artificially splitting work to produce a particular story count.
+
+## Example Features
+
+The following examples illustrate the expected level of product and engineering scope.
+
+Teams are **encouraged to propose an original feature of their own design**. The examples are provided to establish the expected scope, not to define preferred solutions.
+
+### Example 1 - Secure Read-Only Analysis Sharing
+
+Allow the owner of an analysis to create a read-only share link for that analysis.
+
+A complete implementation might include:
+
+1. UX for creating, viewing, and revoking a share.
+2. A persisted share/grant record associated with the owned analysis.
+3. A secure share token or equivalent access mechanism.
+4. Backend authorization that exposes only the shared analysis.
+5. Read-only behavior for the recipient.
+6. Handling of revoked, invalid, or expired shares if expiration is supported.
+7. Automated tests for authorized, revoked, invalid, and cross-user behavior.
+
+### Example 2 - Review Annotations and Tags
+
+Allow a user to create personal tags and annotations for reviews within an analysis.
+
+A complete implementation might include:
+
+1. UX for creating, editing, and deleting tags or annotations.
+2. Persisted tag and annotation data.
+3. Relationships between tags, annotations, reviews, and the owning user.
+4. Filtering or finding reviews by user-created tags.
+5. Ownership enforcement so one user cannot access another user's annotations.
+6. Automated tests for persistence, ownership, update/delete behavior, and filtering.
+
+Simply adding a single notes field without a meaningful lifecycle or supporting workflow would not satisfy this example.
+
+### Example 3 - Saved Analysis Comparison
+
+Allow a user to select two analyses they own, create a named comparison, and reopen that comparison later.
+
+A complete implementation might include:
+
+1. UX for selecting analyses and creating a comparison.
+2. A persisted Comparison entity or equivalent relationship between analyses.
+3. Backend logic for retrieving and presenting useful information from both datasets.
+4. Authorization across both referenced analyses.
+5. Reopen and delete behavior for saved comparisons.
+6. Defined behavior when one of the referenced analyses becomes unavailable.
+7. Automated tests covering persistence, ownership, lifecycle behavior, and comparison results.
+
+## Features That Are Too Small By Themselves
+
+The following changes do **not** satisfy the student-designed product feature requirement by themselves:
+
+1. Dark mode, color themes, or primarily cosmetic changes.
+2. Adding another simple sort option.
+3. Adding another simple filter to the existing review filter feature.
+4. Adding another export format.
+5. Adding a single field to an existing record.
+6. Adding a static dashboard card, chart, or informational panel.
+7. A UI-only enhancement with no meaningful backend behavior.
+8. A backend-only refactor with no new user capability.
+9. Calling an additional third-party API without introducing meaningful ReviewLens product behavior.
+
+A team may include changes like these as part of a larger approved feature, but they are not substantial enough to satisfy this requirement on their own.
+
+---
+
 # Sprint 3 Explicitly Out of Scope
 
 The following functionality is not required for Sprint 3:
 
 1. Multiple review platforms.
-2. Public sharing of analyses.
+2. Public sharing of analyses, except when approved as the team's student-designed product feature.
 3. Collaboration between users.
 4. Organization/team accounts.
 5. General-purpose AI chat.
